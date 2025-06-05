@@ -1,0 +1,90 @@
+Problemas de negocio
+Definir el interés asociado al riesgo crediticio para cada cliente nuevo que solicita un crédito de libre inversión, usando los datos históricos de clientes anteriores para construir un modelo predictivo.
+
+Datos: 
+Costos operativos: 5% (fijo)
+
+Margen esperado: 10% (fijo)
+
+Riesgo crediticio: % a definir con modelo (Objetivo)
+Total interés = 5% + 10% + % definido por el grupo
+
+Estrategia: 
+
+Utilizar modelos de regresión supervisada para predecir la proporción de crédito no pagado (NPL) en los datos históricos, y luego convertir esta predicción en una tasa de interés de riesgo para los clientes nuevos.
+
+No exagerar el interés de riesgo (clientes pueden desistir).
+
+Procuren minimizar tasas sin generar pérdidas.
+
+Diseño de metodología (foco)
+
+error y sobreajuste (train vs test).
+
+
+Indicador
+El indicador clave (o variable objetivo) en el diseño de la solución es:
+
+Proporción del crédito no pagado (Non-Performing Loan, NPL)
+
+Este indicador:
+
+Es una variable continua entre 0 y 1 que representa qué parte del crédito no recuperado en los clientes históricos.
+
+Permite construir una tasa de interés de riesgo personalizada: entre mayor sea el NPL estimado, mayor será la tasa de interés que debe cobrarse para cubrir el riesgo de no pago.
+
+
+Solución analítica
+
+La solución será supervisada o automática?
+
+Analizar las variables generales que influyen en el no pago de los créditos (Históricos) y generar estrategias para mejorar el desempeño de estos pagos.
+ 
+Predecir la respuesta del cliente ante la tasa propuesta.
+
+
+flujo: 
+
+1. Solicitud del crédito:
+
+El cliente solicita el crédito por app, web, oficina o canal digital.
+
+Se capturan datos personales, financieros y laborales.
+
+2. Validación y procesamiento:
+
+Se verifica que la información esté completa y válida.
+
+Se consulta información interna y externa del cliente.
+
+3. Evaluación con modelo de riesgo:
+
+Se usa un modelo predictivo entrenado con datos históricos.
+
+El modelo estima el riesgo de no pago (NPL) y asigna una tasa de interés por riesgo.
+
+4. Oferta al cliente:
+
+Se comunica la tasa total (5% costos + 10% margen + riesgo).
+
+Se ofrecen alternativas para reducir la tasa si el riesgo es alto (presentar codeudor, mejorar ingresos, etc.).
+
+5. Firma y desembolso:
+
+El cliente acepta o mejora condiciones.
+
+Se firma el crédito y se desembolsa el dinero.
+
+6. Seguimiento:
+
+Se monitorea el comportamiento de pago del cliente.
+
+7. Reentrenamiento del modelo:
+
+Periódicamente se actualiza el modelo con nuevos datos reales.
+
+Se mejora la precisión y se adapta a cambios en los perfiles de los clientes.
+
+8. Explicabilidad:
+
+Se pueden aplicar herramientas para explicar al cliente o al regulador por qué se asignó esa tasa.
